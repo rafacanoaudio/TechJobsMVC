@@ -3,8 +3,80 @@
     <h1>@ViewBag.title</h1>
 
     @{
-        //TODO #1: Use a loop to display job results in a table.
+//TODO #1: Use a loop to display job results in a table.
     }
+
+    @*  OPTION 1. ***** I LIKE THE LOOK OF IT BETTER *****
+            <table class="job-listing">
+            <tr>
+                <th>
+                    ID:
+                </th>
+                <th>
+                    Name:
+                </th>
+                <th>
+                    Employer
+                </th>
+                <th>
+                    Location:
+                </th>
+                <th>
+                    Position Type:
+                </th>
+                <th>
+                    Skill:
+                </th>
+            </tr>
+            @foreach (var job in ViewBag.jobs)
+            {
+                <tr>
+                    <td>@job.Id</td>
+                    <td>@job.Name</td>
+                    <td>@job.Employer</td>
+                    <td>@job.Location</td>
+                    <td>@job.PositionType</td>
+                    <td>@job.CoreCompetency</td>
+                </tr>
+            }
+
+
+        </table>*@
+
+    @* OPTION 2. ***** I DON'T HAVE A BLANK SPACE AT THE END OF SKILL, NEXT ID IS TOO CLOSE *****
+        <table class="job-listing">
+    @foreach (var job in ViewBag.jobs)
+    {
+        <tr><th>ID:</th><td>@job.Id</td></tr>
+
+        <tr><th>Name:</th><td>@job.Name</td></tr>
+
+        <tr><th>Employer:</th><td>@job.Employer</td></tr>
+
+        <tr><th>Location:</th><td>@job.Location</td></tr>
+
+        <tr><th>Position Type:</th><td>@job.PositionType</td></tr>
+
+        <tr><th>Skill:</th><td>@job.CoreCompetency</td></tr>
+    }*@
+
+<table class="job-listing">
+    @foreach (var job in ViewBag.jobs)
+    {
+        <tr><th>ID:</th><td>@job.Id</td></tr>
+
+        <tr><th>Name:</th><td>@job.Name</td></tr>
+
+        <tr><th>Employer:</th><td>@job.Employer</td></tr>
+
+        <tr><th>Location:</th><td>@job.Location</td></tr>
+
+        <tr><th>Position Type:</th><td>@job.PositionType</td></tr>
+
+        <tr><th>Skill:</th><td>@job.CoreCompetency</td></tr>
+    }
+
+</table>
 
 
 </div>
